@@ -11,10 +11,10 @@ from pygame.locals import *
 import simplejson
 from ScrolledText import *
 
-access_token="714283612795842560-0BTetsGCwahWv5DHpg9xOUggknnDWr6"
-access_token_secret="Gr6xYBYakIKtaJ01dSQ4Ye4YDlfwgbMQSHB7PmDr2T56M"
-consumer_key="z7Tq8GEorjWtRmBzMjnkquLDB"
-consumer_secret="cO0odfVYeTeQZ2aJhTrzcBmi29ApkQ1wR1YeQ31JKiG5IhXWAP"
+access_token=<enter access token>
+access_token_secret=<enter secret access token>
+consumer_key= <enter consumer key>
+consumer_secret=<enter consumer secret token >
 
 auth=OAuthHandler(consumer_key,consumer_secret)
 auth.set_access_token(access_token,access_token_secret)
@@ -37,7 +37,7 @@ def test2():
 	class Listener(StreamListener):
 		def on_data(self,data):
 			print (data)
-			f=open("/home/brucewayne/Desktop/twitter.txt","a")
+			f=open(<file location to download to>,"a")
 			f.write(data)
 			f.write('\n')
 			f.close()
@@ -48,7 +48,7 @@ def test2():
 	stream.filter(track=['Manchester United'])
 
 def test3():
-	tweets_data_path="/home/brucewayne/Desktop/twitter.txt"
+	tweets_data_path=<location of saved file>
 	tweets_data=[]
 	tweets_file=open(tweets_data_path,"r")
 
@@ -79,7 +79,7 @@ def test3():
 
 def test4():
 	tweets_data=[]
-	f=open("/home/brucewayne/Desktop/twitter.txt","r")
+	f=open(<file location>,"r")
 	for line in f:
 		try:
 			tweets_data.append(json.loads(line))
